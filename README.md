@@ -12,7 +12,7 @@ ln -s .vimrc dotfiles/vimrc
 ln -s .vim dotfiles/vim
 ```
 
-### Setting up node, npm and jake for install scripts
+## Setting up node, npm and jake for install scripts
 
 ```
 sudo apt-get install -y python-software-properties
