@@ -3,7 +3,7 @@ task 'default', (params) ->
   jake.logger.log 'Run "jake -T" to see a list of available installation scripts.'
 
 desc 'Setup development machine'
-task 'setup-dev', ['install-coffeescript', 'install-jekyll', 'install-vm'], (params) ->
+task 'setup-dev', ['install-jekyll', 'install-vm'], (params) ->
   jake.logger.log 'DONE'
 
 desc 'Install VM requirements'
@@ -21,21 +21,8 @@ task 'install-vm', (params) ->
     printStderr: true
   jake.exec cmds, callback, options
 
-desc 'Install CoffeeScript'
-task 'install-coffeescript', (params) ->
-  cmds = [
-    'sudo npm install -g coffee-script'
-  ]
-  callback = ->
-    jake.logger.log 'DONE'
-    complete()
-  options =
-    printStdout: true
-    printStderr: true
-  jake.exec cmds, callback, options
-
 desc 'Install Ruby & Gem'
-task 'install-ruby', 'install-ruby', (params) ->
+task 'install-ruby', (params) ->
   cmds = [
     'sudo apt-get -y install ruby-dev rubygems'
   ]
