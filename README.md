@@ -22,3 +22,10 @@ sudo apt-get -y install nodejs npm
 sudo npm install -g jake
 sudo npm install -g coffee-script
 ```
+
+## Notes & caveats
+
+The vim-coffee-script bundle was cloned from github but then had the git info
+manually deleted before being added to this repository. This is a quick win
+to ensure it is portable with these dotfiles, but will make updating it a little
+harder than it should be based on https://github.com/kchmck/vim-coffee-script.
