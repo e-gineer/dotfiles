@@ -8,8 +8,8 @@ scripts, no drama, just ship something and go from there.
 ```
 cd ~
 git clone https://github.com/e-gineer/dotfiles.git
-ln -s .vimrc dotfiles/vimrc
-ln -s .vim dotfiles/vim
+ln -s dotfiles/vimrc .vimrc
+ln -s dotfiles/vim .vim
 ```
 
 ## Setting up node, npm and jake for install scripts
