@@ -16,6 +16,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'spf13/vim-colors'
+Bundle 'groenewege/vim-less'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -136,5 +137,9 @@ endif
 " syntax highlighting
 syntax enable
 set background=dark
-colorscheme solarized
-set hlsearch
+
+" set custom file types
+au BufNewFile,BufRead *.ect set filetype=mason
+au BufNewFile,BufRead *.cson.ect set filetype=coffee
+au BufNewFile,BufRead *.coffee.md set filetype=coffee
+
