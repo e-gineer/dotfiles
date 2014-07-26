@@ -8,5 +8,5 @@ scripts, no drama, just ship something and go from there.
 ```
 cd ~
 git clone https://github.com/e-gineer/dotfiles.git
-dotfiles/setup.sh
+./dotfiles/setup.sh
 ```
