@@ -17,6 +17,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'spf13/vim-colors'
 Bundle 'groenewege/vim-less'
+Bundle "lepture/vim-jinja"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,6 +141,10 @@ set background=dark
 
 " set custom file types
 au BufNewFile,BufRead *.ect set filetype=mason
+au BufNewFile,BufRead *.cson set filetype=coffee
 au BufNewFile,BufRead *.cson.ect set filetype=coffee
+au BufNewFile,BufRead *.js.nj set filetype=jinja
+au BufNewFile,BufRead *.html.nj set filetype=jinja
+au BufNewFile,BufRead *.json.nj set filetype=json
 au BufNewFile,BufRead *.coffee.md set filetype=coffee
 
