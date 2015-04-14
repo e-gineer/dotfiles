@@ -17,6 +17,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'spf13/vim-colors'
 Plugin 'vim-scripts/DirDiff.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle "lepture/vim-jinja"
 
