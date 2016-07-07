@@ -20,7 +20,9 @@ Plugin 'vim-scripts/DirDiff.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Bundle 'groenewege/vim-less'
-Bundle "lepture/vim-jinja"
+Bundle 'lepture/vim-jinja'
+Bundle 'chase/vim-ansible-yaml'
+Bundle 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -151,3 +153,11 @@ au BufNewFile,BufRead *.html.nj set filetype=jinja
 au BufNewFile,BufRead *.json.nj set filetype=json
 au BufNewFile,BufRead *.coffee.md set filetype=coffee
 
+" The default YAML syntax in vim 7.4 is awfully slow,
+" so just use the fast ansible YAML highlighter instead
+au BufNewFile,BufRead *.yaml set filetype=ansible
+au BufNewFile,BufRead *.yml set filetype=ansible
+
+au BufNewFile,BufRead *.yaml.tj2 set filetype=ansible
+au BufNewFile,BufRead *.yml.tj2 set filetype=ansible
+au BufNewFile,BufRead *.tf.tj2 set filetype=terraform
