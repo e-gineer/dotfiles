@@ -11,19 +11,20 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-fugitive'
-"Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'spf13/vim-colors'
 Plugin 'vim-scripts/DirDiff.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
 Bundle 'groenewege/vim-less'
 Bundle 'lepture/vim-jinja'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'hashivim/vim-terraform'
+
+" Plugins for git support - careful - performance impact
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,7 +107,7 @@ if has('statusline')
   " Broken down into easily includeable segments
   set statusline=%<%f\                     " Filename
   set statusline+=%w%h%m%r                 " Options
-  set statusline+=%{fugitive#statusline()} " Git Hotness
+  "set statusline+=%{fugitive#statusline()} " Git Hotness - performance impact
   set statusline+=\ [%{&ff}/%Y]            " Filetype
   set statusline+=\ [%{getcwd()}]          " Current dir
   set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
@@ -162,3 +163,15 @@ au BufNewFile,BufRead *.yml set filetype=ansible
 au BufNewFile,BufRead *.yaml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.yml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.tf.tj2 set filetype=terraform
+
+" GUI font type and size setting.
+if has('win32')
+    set guifont=Consolas:h12   " Win32.
+elseif has('gui_macvim')       " OSX.
+    set guifont=Consolas:h18
+    highlight Normal guibg=black
+    highlight LineNr guibg=#0f0f0f
+    highlight CursorLine guibg=#222222
+else
+    set guifont=Monospace\ 12  " Linux.
+endif
