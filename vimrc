@@ -16,7 +16,10 @@ Plugin 'vim-scripts/DirDiff.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
 Plugin 'fatih/vim-go'
+Plugin 'w0rp/ale'
+Plugin 'prettier/vim-prettier'
 Bundle 'groenewege/vim-less'
 Bundle 'lepture/vim-jinja'
 Bundle 'chase/vim-ansible-yaml'
@@ -57,7 +60,7 @@ set nobackup
 " This is a less agressive variant of http://blog.ezyang.com/2010/03/vim-textwidth/
 augroup vimrc_autocmds
   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=grey
-  autocmd BufEnter * match OverLength /\%81v/
+  autocmd BufEnter * match OverLength /\%121v/
 augroup END
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
@@ -163,6 +166,10 @@ au BufNewFile,BufRead *.yml set filetype=ansible
 au BufNewFile,BufRead *.yaml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.yml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.tf.tj2 set filetype=terraform
+
+" Prettier by default on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.json PrettierAsync
 
 " GUI font type and size setting.
 if has('win32')
