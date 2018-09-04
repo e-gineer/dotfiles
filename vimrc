@@ -166,10 +166,12 @@ au BufNewFile,BufRead *.yml set filetype=ansible
 au BufNewFile,BufRead *.yaml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.yml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.tf.tj2 set filetype=terraform
+au BufNewFile,BufRead *.tf.njk set filetype=terraform
 
 " Prettier by default on save
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.json PrettierAsync
+autocmd BufWritePre *.js PrettierAsync
+"autocmd BufWritePre *.js,*.json PrettierAsync
 
 " GUI font type and size setting.
 if has('win32')
