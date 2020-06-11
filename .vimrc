@@ -24,6 +24,9 @@ Bundle 'groenewege/vim-less'
 Bundle 'lepture/vim-jinja'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'hashivim/vim-terraform'
+Bundle 'lepture/vim-velocity'
+Bundle 'alunny/pegjs-vim'
+Bundle 'jparise/vim-graphql'
 
 " Plugins for git support - careful - performance impact
 "Plugin 'tpope/vim-fugitive'
@@ -129,7 +132,7 @@ set wildmode=list:longest,full  " Command <Tab> completion, list matches, then l
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
-set foldenable                  " Auto fold code
+set nofoldenable                " Don't fold code
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
@@ -168,8 +171,12 @@ au BufNewFile,BufRead *.yml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.tf.tj2 set filetype=terraform
 au BufNewFile,BufRead *.tf.njk set filetype=terraform
 
+au BufNewFile,BufRead *.vtl set filetype=velocity
+au BufNewFile,BufRead *.pegjs set filetype=pegjs
+au BufNewFile,BufRead *.graphql set filetype=graphql
+
 " Prettier by default on save
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
 autocmd BufWritePre *.js PrettierAsync
 "autocmd BufWritePre *.js,*.json PrettierAsync
 
