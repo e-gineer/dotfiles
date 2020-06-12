@@ -4,3 +4,6 @@
 if [ -r ~/.bashrc ]; then
    source ~/.bashrc
 fi
+
+# Stop MacOS from showing the please use zsh nag
+export BASH_SILENCE_DEPRECATION_WARNING=1
