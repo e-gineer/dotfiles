@@ -7,3 +7,6 @@ fi
 
 # Stop MacOS from showing the please use zsh nag
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# bash-completion for auto complete in programs like steampipe
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

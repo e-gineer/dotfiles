@@ -27,6 +27,7 @@ Bundle 'hashivim/vim-terraform'
 Bundle 'lepture/vim-velocity'
 Bundle 'alunny/pegjs-vim'
 Bundle 'jparise/vim-graphql'
+Bundle 'e-gineer/vim-steampipe'
 
 " Plugins for git support - careful - performance impact
 "Plugin 'tpope/vim-fugitive'
@@ -170,14 +171,20 @@ au BufNewFile,BufRead *.yaml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.yml.tj2 set filetype=ansible
 au BufNewFile,BufRead *.tf.tj2 set filetype=terraform
 au BufNewFile,BufRead *.tf.njk set filetype=terraform
-
+au BufNewFile,BufRead *.hcl set filetype=terraform
+au BufNewFile,BufRead *.mdx set filetype=markdown
 au BufNewFile,BufRead *.vtl set filetype=velocity
 au BufNewFile,BufRead *.pegjs set filetype=pegjs
 au BufNewFile,BufRead *.graphql set filetype=graphql
 
 " Prettier by default on save
 let g:prettier#autoformat = 1
-autocmd BufWritePre *.js PrettierAsync
+" Allow auto formatting for files without "@format" or "@prettier" tag
+"let g:prettier#autoformat_require_pragma = 0
+" Run it asynchronously
+let g:prettier#exec_cmd_async = 1
+" File types
+autocmd BufWritePre *.js,*.jsx Prettier
 "autocmd BufWritePre *.js,*.json PrettierAsync
 
 " GUI font type and size setting.
