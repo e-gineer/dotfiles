@@ -1,0 +1,13 @@
+[user]
+	email = nathan@turbot.com
+	name = Nathan Wallace
+[push]
+	default = simple
+[core]
+	editor = /usr/bin/vim
+[credential]
+	helper = osxkeychain
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[init]
+	defaultBranch = main
